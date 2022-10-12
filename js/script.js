@@ -23,7 +23,7 @@ for(let image of imageArray){
     <img src="img/${image}" alt="background photo">
     </div>`
 }
-box.innerHTML+=result;
+box.innerHTML=result;
 //creazione dell'HTML collection con classe="box-img"
 const boxList=document.getElementsByClassName("box-img");
 console.log(boxList);//debug
@@ -50,11 +50,10 @@ const btnDown=document.getElementById("down-row");
 //funzionamento tasto in avanti
 btnUp.addEventListener("click",function(){
 if(index<=boxList.length-1){
-if( index === boxList.length-1  ){
-    index++;
-    boxList[boxList.length-1].classList.remove("active");
-    index=0;
-    boxList[index].classList.add("active")
+
+if(index===boxList.length-1){
+index++;
+
 }
 
 else{
@@ -62,7 +61,20 @@ boxList[index].classList.remove("active");
 index++;
 boxList[index].classList.add("active");
 }
+
 }
+
+
+
+if(index === boxList.length){
+    boxList[boxList.length-1].classList.remove("active");
+    boxList[0].classList.add("active");
+    index=0;
+}
+
+
+
+
 })
 
           
