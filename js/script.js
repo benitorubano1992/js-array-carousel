@@ -49,31 +49,55 @@ const btnUp=document.getElementById("up-row");
 const btnDown=document.getElementById("down-row");
 //funzionamento tasto in avanti
 btnUp.addEventListener("click",function(){
-if(index<boxList.length-1){
+if(index<=boxList.length-1){
+if( index === boxList.length-1  ){
+    index++;
+    boxList[boxList.length-1].classList.remove("active");
+    index=0;
+    boxList[index].classList.add("active")
+}
+
+else{
 boxList[index].classList.remove("active");
 index++;
 boxList[index].classList.add("active");
+}
+}
+})
 
-
-
-}    
-
-
-
-})            
+          
 //funzionamento tasto indietro
 btnDown.addEventListener("click",function(){
-    if(index>0){
+    if(index>=0){
+        if((index === 0)){
+            index--;
+        }
+        else{
         boxList[index].classList.remove("active");
         index--;
         boxList[index].classList.add("active");
+        }
+        }
+        
+        
+        
+        if(index === -1){
+            boxList[0].classList.remove("active")
+            index=boxList.length-1;
+            boxList[index].classList.add("active");
+        }
+        
     
-    }
-
-
-
+    
+    
+    
+    
 
 })
+
+
+
+
 
 
 
