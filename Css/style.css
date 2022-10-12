@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/*
+verifico collegamento */
+/*body{
+    background-color: aqua;
+}
+*/
+/*struttura base*/
+.slider{
+    width:90%;
+    height:90vh;
+    margin:5vh auto;
+   /* background-color: blueviolet;debug*/
+   /* border:1px solid black;debug*/
+}
+
+
+
+/*
+image class*/
+
+.hidden{
+    display:none;
+}
+.active{
+    display:block;
+}
+
+
+
+
+.box{
+    position:relative;
+}
+
+.box-img{
+    height:90vh;
+    /*background-color: red;debug*/
+}    
+img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.arrow{
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width:30px;
+    height:30px;
+    line-height: 30px;
+    border-radius:50%;
+    cursor:pointer;
+    background-color: lightslategray;
+    text-align: center;
+    font-size:25px;
+    border:0;
+}
+.arrow-up{
+    top:10px;
+}
+.arrow-down{
+    bottom:10px;
+}
