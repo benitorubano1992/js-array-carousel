@@ -51,22 +51,19 @@ const btnDown=document.getElementById("down-row");
 btnUp.addEventListener("click",function(){
 if(index<=boxList.length-1){
 
-if(index===boxList.length-1){
-index++;
-
-}
-
-else{
 boxList[index].classList.remove("active");
 index++;
+if(index==boxList.length){
+index=0;    
+}
 boxList[index].classList.add("active");
 }
 
-}
+})
 
 
 
-if(index === boxList.length){
+/*if(index === boxList.length){
     boxList[boxList.length-1].classList.remove("active");
     boxList[0].classList.add("active");
     index=0;
@@ -75,30 +72,32 @@ if(index === boxList.length){
 
 
 
-})
+}*/
 
           
 //funzionamento tasto indietro
 btnDown.addEventListener("click",function(){
     if(index>=0){
-        if((index === 0)){
-            index--;
-        }
-        else{
+       
+        
+        
         boxList[index].classList.remove("active");
         index--;
+        if(index==-1){
+            index=boxList.length-1;
+        }
         boxList[index].classList.add("active");
+        
         }
-        }
         
         
         
-        if(index === -1){
+        /*if(index === -1){
             boxList[0].classList.remove("active")
             index=boxList.length-1;
             boxList[index].classList.add("active");
         }
-        
+        */
     
     
     

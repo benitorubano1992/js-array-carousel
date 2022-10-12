@@ -32,44 +32,48 @@ const btnDown=document.getElementById("btn-down");
 console.log(btnDown);
 btnUp.addEventListener("click",function(){
 if(slider<=itemList.length-1){
-    if(slider< itemList.length-1){
+  
         itemList[slider].classList.remove("active");
         boxList[slider].classList.remove("attivo")
         slider++;
+        if(slider==itemList.length){
+        slider=0;//se la posizione con cui scorro l'array si trova nella posizione pare alla lunghezza dell'array,posizione non accessibile allora riparto dalla posizione 0
+        }
         itemList[slider].classList.add("active");
         boxList[slider].classList.add("attivo")
     }
-    else {
+      /*  
         boxList[itemList.length-1].classList.remove("attivo");
         itemList[itemList.length-1].classList.remove("active");
         slider=0;
         boxList[slider].classList.add("attivo"); 
         itemList[slider].classList.add("active");       
-        
-        }
-}
-
-})
+        */
+        })
 
 
 btnDown.addEventListener("click",function(){
     if(slider>=0){
-        if(slider>0){
+       
             itemList[slider].classList.remove("active");
             boxList[slider].classList.remove("attivo")
             slider--;
+            if(slider === -1){
+                slider=boxList.length-1;//se l'indice con cui scorro l'array arriva a -1,posizione non accessibile allora riparto dalla posizione boxList.lenght-1 
+
+            }
             itemList[slider].classList.add("active");
             boxList[slider].classList.add("attivo")
         }
-        else {
+        /*else {
             itemList[slider].classList.remove("active");
             boxList[slider].classList.remove("attivo")
             slider=itemList.length-1;
              itemList[slider].classList.add("active");       
              boxList[slider].classList.add("attivo")
             }
-    }
-})
+          */  
+        })
 
 
 
